@@ -13,7 +13,7 @@ class SVM:
             epochs: the number of epochs to train for
             reg_const: the regularization constant
         """
-        self.w = None  # TODO: change this
+        self.w = None
         self.alpha = lr
         self.epochs = epochs
         self.reg_const = reg_const
@@ -35,7 +35,6 @@ class SVM:
             the gradient with respect to weights w; an array of the same shape
                 as w
         """
-        # TODO: implement me
         wZero = np.zeros(len(self.w))
         #penalty = np.subtract(1, np.multiply(y_train, np.dot(X_train, self.w))
         if np.multiply(y_train, np.dot(X_train, self.w)) < 1: #<=?
@@ -53,7 +52,6 @@ class SVM:
                 N examples with D dimensions
             y_train: a numpy array of shape (N,) containing training labels
         """
-        # TODO: implement me
         self.w = [0] * (len(X_train[0]))
         for i, val in enumerate(y_train):
             if val == 0:
@@ -80,7 +78,6 @@ class SVM:
                 length N, where each element is an integer giving the predicted
                 class.
         """
-        # TODO: implement me
         pred = np.zeros(len(X_test))
         for N in range(len(X_test)):
             calc = np.dot(self.w, X_test[N])
